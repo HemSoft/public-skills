@@ -1,6 +1,8 @@
 ---
 name: pr-reviewer
-description: Performs thorough, critical PR reviews with 3 modes - local report generation, inline PR comments, or active fix assistance.
+description: V1.0 - Performs thorough, critical PR reviews with 3 modes - local report generation, inline PR comments, or active fix assistance.
+license: MIT
+compatibility: Requires GitHub CLI (gh)
 ---
 
 # PR Reviewer

@@ -1,6 +1,8 @@
 ---
 name: version
-description: Release version management with auto-detection, Semantic Versioning, Keep a Changelog format, and git tag integration. Use when bumping versions or preparing releases.
+description: V1.0 - Release version management with auto-detection, Semantic Versioning, Keep a Changelog format, and git tag integration. Use when bumping versions or preparing releases.
+license: MIT
+compatibility: Requires git
 ---
 
 # Version Management

@@ -1,6 +1,7 @@
 ---
 name: self-reflection
-description: Helps AI agents troubleshoot difficult tasks and record lessons learned into persistent memory to prevent future mistakes and enable continuous improvement.
+description: V1.0 - Helps AI agents troubleshoot difficult tasks and record lessons learned into persistent memory to prevent future mistakes and enable continuous improvement.
+license: MIT
 ---
 
 # Self-Reflection

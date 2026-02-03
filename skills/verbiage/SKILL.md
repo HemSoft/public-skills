@@ -1,6 +1,7 @@
 ---
 name: verbiage
-description: Creates and manages VERBIAGE.md terminology dictionary in repository root. Use to define project-specific terms and maintain consistent vocabulary.
+description: V1.0 - Creates and manages VERBIAGE.md terminology dictionary in repository root. Use to define project-specific terms and maintain consistent vocabulary.
+license: MIT
 ---
 
 # Verbiage

@@ -1,6 +1,8 @@
 ---
 name: github-issue
-description: Creates well-structured GitHub Issues that serve as implementation specs with proper labels and escape-safe formatting.
+description: V1.0 - Creates well-structured GitHub Issues that serve as implementation specs with proper labels and escape-safe formatting. Use when creating issues via CLI.
+license: MIT
+compatibility: Requires GitHub CLI (gh)
 ---
 
 # GitHub Issue Creator

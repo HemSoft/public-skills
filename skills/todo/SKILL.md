@@ -1,6 +1,7 @@
 ---
 name: todo
-description: Manages TODO.md file in repository root with status table and context sections for tracking project tasks, ideas, and plans.
+description: V1.0 - Manages TODO.md file in repository root with status table and context sections for tracking project tasks, ideas, and plans.
+license: MIT
 ---
 
 # To-Do Manager

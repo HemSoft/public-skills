@@ -1,6 +1,8 @@
 ---
 name: markdown
-description: Expert guidance for markdown linting with markdownlint-cli2, quality enforcement, and best practices for consistent documentation.
+description: V1.0 - Expert guidance for markdown linting with markdownlint-cli2, quality enforcement, and best practices. Use when enforcing markdown quality standards.
+license: MIT
+compatibility: Requires markdownlint-cli2 (npm install -g markdownlint-cli2)
 ---
 
 # Markdown Expert

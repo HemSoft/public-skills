@@ -1,6 +1,7 @@
 ---
 name: simplisticate
-description: Identifies complexity in code and proposes targeted simplifications with risk assessment. The art of making complex things simple.
+description: V1.0 - Identifies complexity in code and proposes targeted simplifications with risk assessment. Use when reducing code complexity.
+license: MIT
 ---
 
 # Simplisticate

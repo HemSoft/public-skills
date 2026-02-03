@@ -1,6 +1,7 @@
 ---
 name: repo-audit
-description: Audits repositories for documentation/reality drift, stale artifacts, unused config, duplicate assets, and cross-reference accuracy. Generates actionable report with Y/N recommendations.
+description: V1.0 - Audits repositories for documentation/reality drift, stale artifacts, unused config, and cross-reference accuracy. Use when verifying repository health.
+license: MIT
 ---
 
 # Repo Audit
