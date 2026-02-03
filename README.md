@@ -19,6 +19,7 @@ npx skills add HemSoft/public-skills/repo-audit
 | Skill | Description |
 |-------|-------------|
 | [repo-audit](skills/repo-audit/SKILL.md) | Audits repositories for documentation drift, stale artifacts, and configuration issues |
+| [simplisticate](skills/simplisticate/SKILL.md) | Identifies complexity in code and proposes targeted simplifications with risk assessment |
 
 ## About skills.sh
 
