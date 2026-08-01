@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "deployedAt": "2026-08-01T11:59:46Z",
+  "tier": "review",
+  "source": "HemSoft/set-it-free-loop",
+  "sourceSha": "380fe0edc7a87cfc7b31233a955b37df0223a3a8",
+  "components": [
+    "labels",
+    "governance",
+    "sfl-pr-review"
+  ],
+  "enginePolicy": {
+    "defaultProfile": "codex-gpt-55-high",
+    "workflows": [
+      {
+        "name": "sfl-pr-review",
+        "profile": "copilot-gpt-55-high",
+        "provider": "copilot",
+        "model": "gpt-5.5",
+        "effort": "high",
+        "renderedModel": "gpt-5.5?effort=high",
+        "requiredSecretsAnyOf": []
+      }
+    ]
+  }
+}
