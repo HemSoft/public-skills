@@ -13,14 +13,18 @@ on:
 permissions:
   contents: read
   pull-requests: read
-  copilot-requests: write
 
 engine:
-  id: copilot
+  id: codex
+  env:
+    OPENAI_BASE_URL: https://openrouter.ai/api/v1
+    OPENAI_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
-model: gpt-5.5?effort=high
+model: moonshotai/kimi-k3?effort=high
 
-network: defaults
+network:
+  allowed:
+    - openrouter.ai
 
 tools:
   github:
@@ -48,7 +52,7 @@ safe-outputs:
     max: 1
     target: triggering
 ---
-# Deployed from: HemSoft/set-it-free-loop/deployment/workflows/sfl-pr-review.md@380fe0edc7a87cfc7b31233a955b37df0223a3a8
+# Deployed from: HemSoft/set-it-free-loop/deployment/workflows/sfl-pr-review.md@235a0df0c70fded4982e8763223e7c9936242215
 # To upgrade: re-run deploy-workflow.ps1 at the desired SHA
 
 <!-- sfl:

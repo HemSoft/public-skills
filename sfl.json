@@ -1,12 +1,12 @@
 {
   "version": "2.0.0",
-  "deployedAt": "2026-08-01T11:59:46Z",
+  "deployedAt": "2026-08-02T00:50:17Z",
   "tier": "review",
   "source": "HemSoft/set-it-free-loop",
-  "sourceSha": "380fe0edc7a87cfc7b31233a955b37df0223a3a8",
+  "sourceSha": "235a0df0c70fded4982e8763223e7c9936242215",
   "components": [
-    "labels",
     "governance",
+    "labels",
     "sfl-pr-review"
   ],
   "enginePolicy": {
@@ -14,12 +14,18 @@
     "workflows": [
       {
         "name": "sfl-pr-review",
-        "profile": "copilot-gpt-55-high",
-        "provider": "copilot",
-        "model": "gpt-5.5",
+        "profile": "openrouter-kimi-k3-high",
+        "provider": "codex",
+        "model": "moonshotai/kimi-k3",
         "effort": "high",
-        "renderedModel": "gpt-5.5?effort=high",
-        "requiredSecretsAnyOf": []
+        "renderedModel": "moonshotai/kimi-k3?effort=high",
+        "requiredSecretsAnyOf": [
+          "OPENROUTER_API_KEY"
+        ],
+        "environment": {
+          "OPENAI_BASE_URL": "https://openrouter.ai/api/v1",
+          "OPENAI_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}"
+        }
       }
     ]
   }
