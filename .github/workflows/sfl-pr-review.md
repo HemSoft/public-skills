@@ -6,21 +6,30 @@ description: |
   consolidated review, and publishes the SFL Reviewer Approval check.
 
 on:
-  pull_request:
-    types: [labeled]
-    names: [sfl-review]
+  label_command:
+    name: sfl-review
+    events: [pull_request]
+    remove_label: true
 
 permissions:
   contents: read
   pull-requests: read
 
-engine:
-  id: codex
-  env:
-    OPENAI_BASE_URL: https://openrouter.ai/api/v1
-    OPENAI_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+models:
+  default-ai-credits-pricing:
+    input: 3
+    output: 15
 
-model: moonshotai/kimi-k3?effort=high
+engine:
+  id: copilot
+  env:
+    COPILOT_PROVIDER_BASE_URL: https://openrouter.ai/api/v1
+    COPILOT_PROVIDER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    COPILOT_PROVIDER_TYPE: openai
+    COPILOT_PROVIDER_WIRE_API: responses
+    COPILOT_MODEL: moonshotai/kimi-k3
+
+model: moonshotai/kimi-k3
 
 network:
   allowed:
@@ -34,6 +43,7 @@ tools:
       private-key: ${{ secrets.SFL_APP_PRIVATE_KEY }}
 
 safe-outputs:
+  threat-detection: false
   github-app:
     client-id: ${{ vars.SFL_APP_CLIENT_ID }}
     private-key: ${{ secrets.SFL_APP_PRIVATE_KEY }}
@@ -47,12 +57,8 @@ safe-outputs:
   create-check-run:
     max: 1
     name: "SFL Reviewer Approval"
-  remove-labels:
-    allowed: [sfl-review]
-    max: 1
-    target: triggering
 ---
-# Deployed from: HemSoft/set-it-free-loop/deployment/workflows/sfl-pr-review.md@235a0df0c70fded4982e8763223e7c9936242215
+# Deployed from: HemSoft/set-it-free-loop/deployment/workflows/sfl-pr-review.md@78483bbf7edf0a4f8d3bf2f68e58678da36044ae
 # To upgrade: re-run deploy-workflow.ps1 at the desired SHA
 
 <!-- sfl:
@@ -66,7 +72,7 @@ safe-outputs:
     one inline thread per finding, and an SFL Reviewer Approval check.
   acceptance-criteria:
     - The sfl-review label triggers exactly one current-head review run
-    - The trigger label is removed through App-authenticated safe outputs
+    - The trigger label is consumed during authorized activation
     - Security, correctness/reliability, and quality/maintainability are reviewed
     - Every finding is an inline thread classified Critical, High, Medium, or Low
     - The review body reports the run ID, head SHA, verdict, and severity counts
@@ -176,9 +182,4 @@ Create exactly one check run named `SFL Reviewer Approval` with:
 - `summary`: the verdict, head SHA, run ID, and severity counts
 - `conclusion`: the approval-policy result above
 
-After requesting the consolidated review and check run, call `remove-labels`
-for `sfl-review` on the triggering pull request. This must be the final safe
-output request so the label can be applied again for a later re-review.
-
-Do not modify code, branches, or pull request metadata. The only permitted
-label change is removing `sfl-review` through the configured safe output.
+Do not modify code, branches, pull request labels, or pull request metadata.
